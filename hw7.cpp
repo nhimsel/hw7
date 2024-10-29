@@ -28,19 +28,11 @@ struct Fraction addFractions(struct Fraction f1, struct Fraction f2)
     ans.num = f1.num*f2.denom + f2.num*f1.denom;
     ans.denom = f1.denom*f2.denom;
 
-    //calculate the LCM and reduce the fraction
-    int lcm = LCM(f1.denom, f2.denom);
-     if (lcm>1)
-    {
-        ans.num=(ans.num*lcm)/ans.denom;
-        ans.denom=lcm;
-    }
+    //calculate the GCD and reduce the fraction
+    int gcd = GCD(ans.num,ans.denom);
+    ans.num/=gcd;
+    ans.denom/=gcd;
     return ans;
-}
-
-int LCM(int a, int b)
-{
-    return (a*b)/GCD(a,b);
 }
 
 int GCD(int a, int b)
