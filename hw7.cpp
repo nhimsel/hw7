@@ -8,7 +8,6 @@ struct Fraction
 };
 
 struct Fraction addFractions(struct Fraction f1, struct Fraction f2);
-int LCM (int a, int b);
 int GCD(int a, int b);
 
 int main()
